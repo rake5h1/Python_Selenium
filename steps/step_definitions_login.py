@@ -1,13 +1,15 @@
 from behave import given, when, then
 from selenium import webdriver
 from pages.login import Login
-# from selenium.webdriver.edge.service import Service
+from selenium.webdriver.chrome.options import Options
 # import os
+options = Options()
+options.add_argument('--headless')
 
 @given("Visit Site")
 def visit_site(context):
     # edge_driver_path = os.environ.get("EDGE_DRIVER_PATH")
-    context.driver = webdriver.Edge()
+    context.driver = webdriver.Edge(options=options)
     context.login_test = Login(context.driver)
     context.driver.get(
         "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"

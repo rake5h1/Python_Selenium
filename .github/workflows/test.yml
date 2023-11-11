@@ -13,7 +13,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Set up Docker Buildx
+      - name: Set up Docker Build
         uses: actions/checkout@v3
 
       
@@ -32,4 +32,4 @@ jobs:
           DOCKER_CLI_EXPERIMENTAL: enabled
 
       - name: Run Test
-        run: docker run -t selenium_with_bdd:latest
+        run: docker run -t selenium_with_bdd

@@ -18,9 +18,9 @@ pipeline {
             steps {
                 script {
                     // Download get-pip.py script
-                    sh "curl -O https://bootstrap.pypa.io/get-pip.py"
+                    bat "curl -O https://bootstrap.pypa.io/get-pip.py"
                     // Install pip
-                    sh "python get-pip.py"
+                    bat "python get-pip.py"
                 }
             }
         }
@@ -29,7 +29,7 @@ pipeline {
             steps {
                 script {
                     // Install required Python packages
-                    sh "pip install -r req.txt"
+                    bat "pip install -r req.txt"
                 }
             }
         }
@@ -37,10 +37,10 @@ pipeline {
             steps {
                 script {
                     // Download and set up Edge WebDriver
-                    sh "curl -O https://msedgedriver.azureedge.net/118.0.2088.76/edgedriver_linux64.zip"
-                    sh "unzip edgedriver_linux64.zip"
-                    sh "chmod +x msedgedriver"
-                    sh "mv msedgedriver /usr/local/bin/"
+                    bat "curl -O https://msedgedriver.azureedge.net/118.0.2088.76/edgedriver_linux64.zip"
+                    bat "unzip edgedriver_linux64.zip"
+                    bat "chmod +x msedgedriver"
+                    bat "mv msedgedriver /usr/local/bin/"
                 }
             }
         }
@@ -49,7 +49,7 @@ pipeline {
             steps {
                 script {
                     // Run Behave tests
-                    sh "behave"
+                    bat "behave"
                 }
             }
         }

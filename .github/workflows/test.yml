@@ -23,12 +23,11 @@ jobs:
 
       - name: Set up EdgeDriver
         run: |
-          EDGEDRIVER_VERSION=$(curl -sS https://msedgedriver.azureedge.net/LATEST_STABLE)
-          wget https://msedgedriver.azureedge.net/$EDGEDRIVER_VERSION/edgedriver_linux64.zip
+          wget https://msedgedriver.azureedge.net/119.0.2151.58/edgedriver_linux64.zip
           unzip edgedriver_linux64.zip
           chmod +x msedgedriver
           sudo mv msedgedriver /usr/local/bin/
-          
+
       - name: Run Behave Tests
         run: |
           behave

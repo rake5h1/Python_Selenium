@@ -17,8 +17,7 @@ pipeline {
             steps {
                 script {
                     // Install pyenv
-                    bat 'curl https://pyenv.run | bash'
-
+                    bat 'curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash'
                     // Add pyenv to the PATH
                     bat 'echo \'export PATH="$HOME/.pyenv/bin:$PATH"\' >> ~/.bashrc'
                     bat 'echo \'eval "$(pyenv init --path)"\' >> ~/.bashrc'

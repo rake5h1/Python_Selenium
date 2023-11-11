@@ -21,7 +21,7 @@ jobs:
           docker buildx create --use
           docker buildx inspect --bootstrap
           docker buildx build --no-cache -t selenium_with_bdd .
-          docker buildx tag selenium_with_bdd:latest rake5h/selenium_with_bdd:latest
+          docker buildx tag selenium_with_bdd:latest rake5h/selenium_with_bdd
         env:
           DOCKER_CLI_EXPERIMENTAL: enabled
 

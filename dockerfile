@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:latest
 
 
 # Install required packages
@@ -20,7 +20,7 @@ RUN wget https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/119.0.6045.
     && mv chromedriver-linux64 /usr/local/bin/
 
 # Install your Python dependencies
-FROM python:3.8
+FROM python:latest
 
 # Copy your Selenium script into the container
 COPY . .

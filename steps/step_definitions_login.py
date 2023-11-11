@@ -1,7 +1,7 @@
 from behave import given, when, then
 from selenium import webdriver
 from selenium.webdriver.edge.options import Options
-from Pages.login import Login
+from pages.login import Login
 
 options = Options()
 options.add_argument("--headless")

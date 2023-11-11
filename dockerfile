@@ -1,4 +1,5 @@
-FROM python:3.8
+FROM ubuntu
+
 
 # Install required packages
 RUN apt-get update && \
@@ -8,7 +9,6 @@ RUN apt-get update && \
 # Download and install Chrome
 RUN apt-get install wget
 RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-
 RUN apt-get install -y ./google-chrome-stable_current_amd64.deb
 
 
@@ -20,6 +20,7 @@ RUN wget https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/119.0.6045.
     && mv chromedriver-linux64 /usr/local/bin/
 
 # Install your Python dependencies
+FROM python:3.8
 
 # Copy your Selenium script into the container
 COPY . .

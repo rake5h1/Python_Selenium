@@ -13,6 +13,24 @@ pipeline {
                 }
             }
         }
+        stage('Install Python') {
+            steps {
+                script {
+                    // Install pyenv
+                    bat 'curl https://pyenv.run | bash'
+
+                    // Add pyenv to the PATH
+                    bat 'echo \'export PATH="$HOME/.pyenv/bin:$PATH"\' >> ~/.bashrc'
+                    bat 'echo \'eval "$(pyenv init --path)"\' >> ~/.bashrc'
+                    bat 'echo \'eval "$(pyenv virtualenv-init -)"\' >> ~/.bashrc'
+                    bat 'source ~/.bashrc'
+
+                    // Install Python
+                    bat "pyenv install -s ${PYTHON_VERSION}"
+                    bat "pyenv global ${PYTHON_VERSION}"
+                }
+            }
+        }
 
        stage('Install Pip') {
             steps {

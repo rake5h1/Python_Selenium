@@ -31,4 +31,4 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Push Docker Image
-        run: docker push selenium_with_bdd@latest
+        run: docker push selenium_with_bdd:latest

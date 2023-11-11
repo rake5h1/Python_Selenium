@@ -14,17 +14,7 @@ pipeline {
             }
         }
 
-        stage('Set Up Python') {
-            steps {
-                script {
-                    // Install and set up Python
-                    sh "pyenv install -s ${PYTHON_VERSION}"
-                    sh "pyenv global ${PYTHON_VERSION}"
-                    sh "python -m venv venv"
-                    sh "source venv/bin/activate"
-                }
-            }
-        }
+       
 
         stage('Install Dependencies') {
             steps {

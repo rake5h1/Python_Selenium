@@ -14,7 +14,16 @@ pipeline {
             }
         }
 
-       
+       stage('Install Pip') {
+            steps {
+                script {
+                    // Download get-pip.py script
+                    sh "curl -O https://bootstrap.pypa.io/get-pip.py"
+                    // Install pip
+                    sh "python get-pip.py"
+                }
+            }
+        }
 
         stage('Install Dependencies') {
             steps {

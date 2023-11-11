@@ -6,6 +6,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      EDGE_DRIVER_PATH: 'msedgedriver.exe'
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -20,6 +22,5 @@ jobs:
           pip install -r req.txt
       - name: Run Behave Tests
         run: |
-          export EDGE_DRIVER_PATH='msedgedriver.exe'
           behave
 

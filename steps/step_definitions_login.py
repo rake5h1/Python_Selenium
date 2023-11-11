@@ -2,11 +2,12 @@ from behave import given, when, then
 from selenium import webdriver
 from pages.login import Login
 from selenium.webdriver.edge.service import Service
+from os import getenv
 
 
 @given("Visit Site")
 def visit_site(context):
-    edge_driver_path = "msedgedriver.exe"
+    edge_driver_path = getenv("EDGE_DRIVER_PATH")
     edge_service = Service(edge_driver_path)
     context.driver = webdriver.Edge(service=edge_service)
     context.login_test = Login(context.driver)

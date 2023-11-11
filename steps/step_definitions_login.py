@@ -8,8 +8,7 @@ from os import getenv
 @given("Visit Site")
 def visit_site(context):
     edge_driver_path = getenv("EDGE_DRIVER_PATH")
-    edge_service = Service(edge_driver_path)
-    context.driver = webdriver.Edge(service=edge_service)
+    context.driver = webdriver.Edge(edge_driver_path)
     context.login_test = Login(context.driver)
     context.driver.get(
         "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"

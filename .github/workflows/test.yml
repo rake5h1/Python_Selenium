@@ -20,7 +20,7 @@ jobs:
         run: |
           docker buildx create --use
           docker buildx inspect --bootstrap
-          docker buildx build --platform linux/amd64,linux/arm64 -t selenium_with_BDD:latest .
+          docker buildx build --platform linux/amd64,linux/arm64 -t selenium_with_bdd:latest .
         env:
           DOCKER_CLI_EXPERIMENTAL: enabled
 
@@ -31,4 +31,4 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Push Docker Image
-        run: docker push selenium_with_BDD:latest
+        run: docker push selenium_with_bdd:latest

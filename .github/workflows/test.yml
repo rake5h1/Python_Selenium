@@ -31,5 +31,5 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Push Docker Image
-        run: docker push selenium_with_bdd:latest
+      - name: Run Test
+        run: docker run -t selenium_with_bdd:latest
